@@ -1,4 +1,12 @@
-show page for user
-
-<%= @user.name%>
-<%= @user.username %>
+<%= @user.name%><br>
+<%= @user.username %><br>
+<table id="ingredients-table" class="table table-hover">
+    <thead>
+        <th class="name">Name</th>
+    </thead>
+    <tbody>
+        <% @user.ingredients.each do |ingredient| %>
+            <td class="name"><%= ingredient.name %></td>
+        <% end %>
+    </tbody>
+</table>

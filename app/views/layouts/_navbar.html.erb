@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fridge Mate</a>
+    <div id="identity-actions">
+        <% if !logged_in? %>
+            <%= button_to "Login", '/login', method: :get%><br>
+            <%= button_to "Sign Up", '/users/new', method: :get%>
+        <% else %>
+            <span class="navbar-text">Logged In as <%= current_user.username %></span>
+        <% end %>
+    </div>
+</nav>

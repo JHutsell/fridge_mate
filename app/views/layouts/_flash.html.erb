@@ -1,0 +1,17 @@
+<% 
+    alerts = {
+        notice: "success",
+        alert: "danger"
+    }.with_indifferent_access
+%>
+
+<div id="flash-container">
+    <% flash.each do |key, messages| %>
+        <% messages = Array(messages).reject(&:blank?) %>
+        <div class="message-container alert alert-<%= alerts.fetch(key) %>">
+            <% messages.each do |message| %>
+                <p><%= message.to_s %></p>
+            <% end %>
+        </div>
+    <% end %>
+</div>

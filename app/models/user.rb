@@ -4,5 +4,5 @@ class User < ApplicationRecord
 
     has_secure_password
     validates_presence_of :username, :name, :password
-    validates_uniqueness_of :username, :message=> "Sorry, this user name has already been taken."
+    validates_uniqueness_of :username
 end

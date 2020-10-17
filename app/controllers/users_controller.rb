@@ -16,16 +16,16 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
-            flash[:errors] = @user.errors.full_messages
+            flash.notice = @user.errors.full_messages
             redirect_to new_user_path
         end
     end
 
     def update
-        if @user.update_attributes(username: params[:new_user_name])
-            flash[:success] = "User Name Updated!"
+        if @user.update(user_params)
+            flash.notice("User Name Updated!")
         else
-            flash[:errors] = @user.errors.full_messages
+            flash.alert = @user.errors.full_messages
             redirect_to user_path(@user)
         end
     end
