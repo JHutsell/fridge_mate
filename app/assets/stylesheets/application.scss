@@ -16,8 +16,20 @@
 table.table {
     max-width: 50%;
     align-items: center;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 
 }
+
+table.table-body {
+    background-color: cadetblue;
+}
+
+#login-signup-forms {
+    text-align: center;
+}
+
 
 #identity-actions {
     float: right;

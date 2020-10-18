@@ -1,15 +1,17 @@
-<h1>Sign Up</h1>
+<div id="login-signup-forms">
+    <h1>Sign Up</h1>
 
-<%= form_for @user do |f|%>
-    <%= f.label :name%> <br>
-    <%= f.text_field :name%> <br>
+    <%= form_for @user do |f|%>
+        <%= f.label :name%> <br>
+        <%= f.text_field :name%> <br>
 
-    <%= f.label :username%><br>
-    <%= f.text_field :username%><br>
+        <%= f.label :username%><br>
+        <%= f.text_field :username%><br>
 
-    <%= f.label :password%><br>
-    <%= f.password_field :password%><br>
+        <%= f.label :password%><br>
+        <%= f.password_field :password%><br><br>
 
-    <%= f.submit %>
-<%end%>
+        <%= f.submit %>
+    <%end%>
+</div>
 

@@ -16,7 +16,11 @@ class SessionsController < ApplicationController
         flash.alert = "Incorrect User Name or Password"
         redirect_to '/login'
       end
-
     end
+
+  def logout
+    session[:user_id] = nil
+    redirect_to '/login'
+  end
 
 end
