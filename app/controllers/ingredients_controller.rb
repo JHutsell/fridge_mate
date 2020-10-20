@@ -12,6 +12,31 @@ class IngredientsController < ApplicationController
         @ingredient = Ingredient.new
     end
 
+    def create 
+        params[:ingredient][:user_id] = current_user.id
+        @ingredient = Ingredient.create(ingredient_params)
+        if @ingredient.valid?
+            flash.notice = "Ingredient Added!"
+        else
+            flash.alert = @ingredient.errors.full_messages
+            redirect_to user_path(current_user)
+        end
+    end
+
+    def update 
+        params[:ingredient][:user_id] = current_user.id
+        if @ingredient.update(ingredient_params)
+            flash.notice = "Ingredient Updated!"
+        else
+            flash.alert = @ingredient.errors.full_messages
+            redirect_to user_path(current_user)
+        end
+    end
+
+    def destroy
+        @ingredient.destroy
+    end
+
 
     private
 
