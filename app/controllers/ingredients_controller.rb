@@ -17,10 +17,15 @@ class IngredientsController < ApplicationController
         @ingredient = Ingredient.create(ingredient_params)
         if @ingredient.valid?
             flash.notice = "Ingredient Added!"
+            redirect_to user_path(current_user)
         else
             flash.alert = @ingredient.errors.full_messages
             redirect_to user_path(current_user)
         end
+    end
+
+    def edit
+
     end
 
     def update 
