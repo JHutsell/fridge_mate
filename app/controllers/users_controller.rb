@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
     skip_before_action :authorized, only: [:new, :create]
 
     def show
@@ -23,7 +22,7 @@ class UsersController < ApplicationController
 
     def update
         if @user.update(user_params)
-            flash.notice("User Name Updated!")
+            flash.notice = "User Name Updated!"
         else
             flash.alert = @user.errors.full_messages
             redirect_to user_path(@user)
