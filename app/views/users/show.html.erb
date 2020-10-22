@@ -7,7 +7,25 @@
     </thead>
     <tbody class="table-body">
         <% @user.ingredients.each do |ingredient| %>
-            <td class="name"><%= ingredient.name %></td>
+            <tr>
+                <td class="name">
+                    <%= ingredient.name %><br>
+                    <%= ingredient.urgency == true ? "Use Soon!" : nil %>
+                </td>
+            </tr>
         <% end %>
     </tbody>
+    <tfoot>
+        <% if @user.id == current_user.id %>
+            <tr>
+                <td>
+                    <button>
+                        <%= link_to "Add an Ingredient!", new_ingredient_path, method: :get %>
+                    </button>
+                </td>
+            </tr>
+        <% else %>
+            nil
+        <% end %>
+    </tfoot>
 </table>

@@ -1,0 +1,13 @@
+<div>
+    <%= form_for @ingredient do |f| %>
+        <%= f.hidden_field :user_id %>
+        <br>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <br>
+        <%= f.label :urgency, 'Does this ingredient need to be used soon?' %>
+        <%= f.select :urgency, [:true, :false] %>
+        <br>
+        <%= f.submit %>
+    <% end %>
+</div>
