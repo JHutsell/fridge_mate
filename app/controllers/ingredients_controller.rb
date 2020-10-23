@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+    before_action :find_ingredient, only: [:show, :edit, :update, :destroy]
 
     def index 
         @ingredients = current_user.ingredients
@@ -40,6 +41,7 @@ class IngredientsController < ApplicationController
 
     def destroy
         @ingredient.destroy
+        redirect_to user_path(current_user)
     end
 
 
@@ -47,6 +49,10 @@ class IngredientsController < ApplicationController
 
     def ingredient_params
         params.require(:ingredient).permit(:name, :urgency, :user_id )
+    end
+
+    def find_ingredient
+        @ingredient = Ingredient.find(params[:id])
     end
 
 end
