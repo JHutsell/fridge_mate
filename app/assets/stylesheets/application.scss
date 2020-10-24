@@ -14,7 +14,7 @@
 @import "bootstrap";
 
 table.table {
-    max-width: 50%;
+    max-width: 60%;
     align-items: center;
     text-align: center;
     margin-right: auto;
@@ -33,5 +33,10 @@ table.table-body {
 
 #identity-actions {
     float: right;
+}
+
+tfoot {
+    margin-right: auto;
+    margin-left: auto;
 }
 

@@ -1,22 +1,33 @@
-<%= @user.name%><br>
+<br>
 <%= @user.username %><br>
 
 <table id="ingredients-table" class="table table-hover">
     <thead>
         <th class="name">Name</th>
+        <th class="urgency">Urgency</th>
+        <% if @user == current_user %>
+            <th class="remove">Remove?</th>
+        <% end %>
     </thead>
     <tbody class="table-body">
         <% @user.ingredients.each do |ingredient| %>
             <tr>
                 <td class="name">
                     <%= ingredient.name %><br>
+                </td>
+                <td class="urgency">
                     <%= ingredient.urgency == true ? "Use Soon!" : nil %>
                 </td>
+                <% if @user == current_user %>
+                    <td class="delete">
+                        <%= button_to "X", ingredient_path(ingredient), method: :delete %>
+                    </td>
+                <% end %>
             </tr>
         <% end %>
     </tbody>
     <tfoot>
-        <% if @user.id == current_user.id %>
+        <% if @user == current_user %>
             <tr>
                 <td>
                     <button>
@@ -24,8 +35,6 @@
                     </button>
                 </td>
             </tr>
-        <% else %>
-            nil
         <% end %>
     </tfoot>
 </table>
