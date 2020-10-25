@@ -3,11 +3,11 @@
     <div id="identity-actions" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
             <% if !logged_in? %>
-                <%= button_to "Login", '/login', method: :get %><br>
-                <%= button_to "Sign Up", '/users/new', method: :get %>
+                <li><%= button_to "Login", '/login', method: :get %><br></li>
+                <li><%= button_to "Sign Up", '/users/new', method: :get %></li>
             <% else %>
-                <span class="navbar-text">Logged In as <%= current_user.username %></span><br><br>
-                <%= button_to "Logout", '/logout', method: :delete %>
+                <li class="navbar-text">Logged In as <%= current_user.username %></li>
+                <li><%= button_to "Logout", '/logout', method: :delete %></li>
             <% end %>
         </ul>
     </div>

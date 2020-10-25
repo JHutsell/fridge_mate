@@ -30,13 +30,25 @@ table.table-body {
     text-align: center;
 }
 
+#ingredient-form {
+    text-align: center;
+}
+
 
 #identity-actions {
     float: right;
 }
 
-tfoot {
-    margin-right: auto;
-    margin-left: auto;
+#add-ingredient-button {
+    display: block;
+    margin: auto;
+    align-content: middle;
+}
+
+@media (min-width: 992px){
+    .navbar li {
+        margin-left : 1em;
+        margin-right : 1em;
+    }
 }
 

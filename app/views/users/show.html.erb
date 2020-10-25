@@ -26,15 +26,10 @@
             </tr>
         <% end %>
     </tbody>
-    <tfoot>
-        <% if @user == current_user %>
-            <tr>
-                <td>
-                    <button>
-                        <%= link_to "Add an Ingredient!", new_ingredient_path, method: :get %>
-                    </button>
-                </td>
-            </tr>
-        <% end %>
-    </tfoot>
 </table>
+
+<% if @user == current_user %>
+    <button id="add-ingredient-button">
+        <%= link_to "Add an Ingredient!", new_ingredient_path, method: :get %>
+    </button>
+<% end %>
