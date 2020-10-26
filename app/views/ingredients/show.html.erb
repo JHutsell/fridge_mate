@@ -1,0 +1,12 @@
+<div id="ingredient-show">
+    <%= @ingredient.name %>
+    <br><br>
+    <% if @ingredient.urgency == true %>
+        <button type="button" class="btn btn-danger">Use Soon!</button> 
+    <% else %>
+        <%= nil %>
+    <% end %>
+    <br><br>
+    <%= button_to("Remove this Ingredient?", @ingredient, method: :delete, :class => "btn btn-warning") %>
+
+</div>

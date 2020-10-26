@@ -13,7 +13,7 @@
         <% @user.ingredients.each do |ingredient| %>
             <tr>
                 <td class="name">
-                    <%= ingredient.name %><br>
+                    <%= link_to ingredient.name, ingredient_path(ingredient) %><br>
                 </td>
                 <td class="urgency">
                     <%= ingredient.urgency == true ? "Use Soon!" : nil %>
