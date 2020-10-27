@@ -4,10 +4,13 @@
         <br>
         <%= f.label :name %>
         <%= f.text_field :name %>
-        <br>
+        <br><br>
+        <%= f.label :notes %>
+        <%= f.text_area :notes %>
+        <br><br>
         <%= f.label :urgency, 'Does this ingredient need to be used soon?' %>
         <%= f.select :urgency, [:true, :false] %>
-        <br>
+        <br><br>
         <%= f.submit %>
     <% end %>
 </div>

@@ -1,5 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Fridge Mate</a>
+    <li class="navbar-brand">
+        <% if current_user != nil %>
+            <%= link_to "Fridge Mate", user_path(current_user) %>
+        <% else %>
+            <%= link_to "Fridge Mate", welcome_path %>
+        <% end %>
+    </li>
     <div id="identity-actions" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
             <% if !logged_in? %>
