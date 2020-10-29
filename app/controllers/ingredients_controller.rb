@@ -30,12 +30,12 @@ class IngredientsController < ApplicationController
     end
 
     def update 
-        params[:ingredient][:user_id] = current_user.id
         if @ingredient.update(ingredient_params)
             flash.notice = "Ingredient Updated!"
+            redirect_to ingredient_path(@ingredient)
         else
             flash.alert = @ingredient.errors.full_messages
-            redirect_to user_path(current_user)
+            redirect_to edit_ingredient_path(@ingredient)
         end
     end
 

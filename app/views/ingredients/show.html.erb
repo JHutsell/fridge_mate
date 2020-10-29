@@ -1,6 +1,7 @@
 <div id="ingredient-show">
-    <%= @ingredient.name %>
+    <h2><%= @ingredient.name %></h2>
     <br><br>
+    <h4>Notes: </h4>
     <div><%= @ingredient.notes %></div>
     <br><br>
     
@@ -11,6 +12,7 @@
     <% end %>
 
     <br><br>
+    <%= button_to "Update this ingredient?", edit_ingredient_path(@ingredient), method: :get %>
+    <br><br>
     <%= button_to("Remove this Ingredient?", @ingredient, method: :delete, :class => "btn btn-warning") %>
-
 </div>
