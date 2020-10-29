@@ -1,4 +1,5 @@
 <div id="ingredient-show">
+    <div id="inner-ingredient-show">
     <h2><%= @ingredient.name %></h2>
     <br><br>
     <h4>Notes: </h4>
@@ -6,13 +7,15 @@
     <br><br>
     
     <% if @ingredient.urgency == true %>
-        <button type="button" class="btn btn-danger">Use Soon!</button> 
-    <% else %>
-        <%= nil %>
+        <button type="button" class="btn btn-outline-danger">Use Soon!</button>
     <% end %>
 
     <br><br>
     <%= button_to "Update this ingredient?", edit_ingredient_path(@ingredient), method: :get %>
     <br><br>
     <%= button_to("Remove this Ingredient?", @ingredient, method: :delete, :class => "btn btn-warning") %>
+    </div>
+    <br><br>
+    <%= button_to("Return to your Home Page!", current_user, method: :get, :class => "btn btn-success") %>
 </div>
+
