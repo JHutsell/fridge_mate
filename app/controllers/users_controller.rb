@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :authorized, only: [:new, :create]
+    helper_method :logged_in_user?
 
     def show
         find_user
@@ -33,6 +34,10 @@ class UsersController < ApplicationController
         @user.destroy
         # redirect_to login_path
         # login page in progress
+    end
+
+    def logged_in_user?
+        @user == current_user
     end
 
     private
