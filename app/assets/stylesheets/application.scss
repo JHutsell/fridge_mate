@@ -32,12 +32,27 @@ table.table-body {
 
 #ingredient-form {
     text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+}
+
+#ingredients-table {
+    border: 2px solid black;
 }
 
 #ingredient-show {
     text-align: center;
-    border: 5px, solid, black;
+}
+
+#inner-ingredient-show {
+    text-align: center;
+    border: 5px solid black;
     margin-top: 100px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #identity-actions {
@@ -61,5 +76,9 @@ table.table-body {
     list-style: none;
     text-decoration: none;
     color: black;
+}
+
+.jumbotron {
+    text-align: center;
 }
 

@@ -1,6 +1,23 @@
-<div>
-    <h1>Welcome!</h1>
-    Have you ever dug through your fridge and found an item that is suprisingly spoiled? 
+<div class="jumbotron">
+    <h1 class="display-4">Welcome!</h1>
+    <p class="lead">Have you ever dug through your fridge and found an item that is suprisingly spoiled? 
     Maybe you had grandiose plans for that item! 
     Fridge Mate is an application designed to alleviate that burden and help you manage your food items!
+    </p>
+    <hr class="my-4">
+    <% if current_user %>
+        <p class="lead">
+            <%= button_to("Go to Your Home Page!", current_user, method: :get, :class => "btn btn-success") %>
+        </p>
+    <% else %>
+        <p class="lead">
+            New user? Navigate to the signup button above!
+        </p>
+        <br><br>
+        <p class="lead">
+            Returning user? Navigate to the login button above!
+        </p>
+    <% end %>
 </div>
+
+
