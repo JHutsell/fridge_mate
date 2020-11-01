@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'solargraph', group: :development
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
+gem 'rest-client'
 
 
 
