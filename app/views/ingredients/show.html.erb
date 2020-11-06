@@ -13,7 +13,7 @@
     <br><br>
     <%= button_to "Update this ingredient?", edit_ingredient_path(@ingredient), method: :get %>
     <br><br>
-    <%= button_to("Remove this Ingredient?", @ingredient, method: :delete, :class => "btn btn-warning") %>
+    <%= button_to("Remove this Ingredient?", @ingredient, method: :delete, :class => "btn btn-warning", data: {confirm: "Remove this ingredient??", remote: true}) %>
     </div>
     <br><br>
     <%= button_to("Return to your Home Page!", current_user, method: :get, :class => "btn btn-success") %>

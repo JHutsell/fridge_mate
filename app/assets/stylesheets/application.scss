@@ -65,6 +65,15 @@ table.table-body {
     align-content: middle;
 }
 
+#search-recipes-form {
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;    
+}
+
+
+
 @media (min-width: 992px){
     .navbar li {
         margin-left : 1em;
@@ -80,5 +89,13 @@ table.table-body {
 
 .jumbotron {
     text-align: center;
+}
+
+#recipe-search-results {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    border: 5px solid black;
+
 }
 
