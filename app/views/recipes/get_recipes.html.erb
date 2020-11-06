@@ -1,0 +1,13 @@
+<h1> bleh </h1>
+<div id="recipe-search-results">
+    <% @response.each do |recipe| %>
+        <div class="card d-flex" style="width: 13rem;">
+            <img class="card-img-top" src=<%= recipe["thumbnail"] %> alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><%= recipe["title"] %></h5>
+                <p class="card-text"><%= recipe["ingredients"] %></p>
+                <a href=<%= recipe["href"] %> class="btn btn-primary">Link</a>
+            </div>
+        </div>
+    <% end %>
+</div>

@@ -23,7 +23,7 @@
                 </td>
                 <% if logged_in_user? %>
                     <td class="delete">
-                        <%= button_to "X", ingredient_path(ingredient), method: :delete %>
+                        <%= button_to "X", ingredient_path(ingredient), method: :delete, data: {confirm: "Remove this ingredient??", remote: true} %>
                     </td>
                 <% end %>
             </tr>
@@ -35,4 +35,13 @@
     <button id="add-ingredient-button">
         <%= link_to "Add an Ingredient!", new_ingredient_path, method: :get %>
     </button>
-<% end %>
+<% end %>  
+
+<div id="search-recipes-form">
+    <h3>Search for Recipes!</h3>
+    <%= form_tag search_recipes_path, method: :post do %>
+        <label for="args">Enter Ingredients</label>
+        <%= text_field_tag :args %>
+        <%= submit_tag "Search" %>
+    <% end %>
+</div>

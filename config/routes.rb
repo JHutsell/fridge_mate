@@ -7,8 +7,14 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#logout'
   resources :user_recipes
   resources :recipe_ingredients
-  resources :recipes
+  resources :recipes do
+    collection do 
+      post :search, to: 'recipes#get_recipes'
+    end
+  end
   resources :ingredients
   resources :users
+  # get 'search', to: 'recipes#get_recipes'
+  # get 'search_results', to: 'recipes#get_recipes', as: :search
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
