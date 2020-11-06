@@ -5,7 +5,7 @@
     }.with_indifferent_access
 %>
 
-<div id="flash-container">
+<div id="flash-container" data-controller="flash">
     <% flash.each do |key, messages| %>
         <% messages = Array(messages).reject(&:blank?) %>
         <div class="message-container alert alert-<%= alerts.fetch(key) %>">
