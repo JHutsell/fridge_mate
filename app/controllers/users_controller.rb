@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :authorized, only: [:new, :create]
-    helper_method :logged_in_user?
+    helper_method :logged_in_user?, :current_user_ingredients
 
     def show
         find_user
