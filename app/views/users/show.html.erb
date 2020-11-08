@@ -40,8 +40,10 @@
 <div id="search-recipes-form">
     <h3>Search for Recipes!</h3>
     <%= form_tag search_recipes_path, method: :post do %>
-        <label for="args">Enter Ingredients</label>
-        <%= text_field_tag :args %>
+        <label for="args">Enter Ingredients:</label>
+        <br>
+        <%= text_area_tag :args, nil, placeholder: "Comma seperated Ingredients" %>
+        <br>
         <%= submit_tag "Search" %>
     <% end %>
 </div>
